@@ -2,12 +2,12 @@ const Registro = require('../Modelos/registroUsuarioBD')
 const bcrypt = require('bcryptjs')
 
 
-/* function registroGet (req,res){
+function registroGet (req,res){
     res.json({
         mensaje: "Hola desde ruta controlador get"
     })
     res.end()
-} */
+}
 
 //Ruta para añadir usuario nuevo
 async function registroPost (req,res){
@@ -71,7 +71,7 @@ function registroDelete (req,res){
 
 
 module.exports = {
-    /* registroGet, */
+    registroGet,
     registroPost,
     /* registroPut,
     registroDelete */

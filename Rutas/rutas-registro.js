@@ -5,7 +5,7 @@ const validaciones = require('../Middlewares/validacionesDeCampos')
 
 const rutaRegistro = Router()
 
-/* rutaRegistro.get('/', registroGet) */
+rutaRegistro.get('/', registroGet)
 rutaRegistro.post('/',[
     check('nombre', 'El nombre es obligatorio').not().isEmpty(),
     check('correo', 'El correo es incorrecto').isEmail(),
