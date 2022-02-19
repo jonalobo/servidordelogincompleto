@@ -1,8 +1,7 @@
 const express = require("express");
 const conectarBD = require("../BaseDeDatos/configuracion");
-const { body, validationResult } = require('express-validator')
+const cors = require('cors')
 
-const { registroGet, registroPost, registroDelete, registroPut } = require('../Controladores/rutaRegistro');
 const rutaRegistro = require("../Rutas/rutas-registro");
 
 require('dotenv').config()
@@ -24,6 +23,8 @@ class Servidor {
         //ruta registro de usuarios
         this.app.use('/api/registrar', rutaRegistro)
         //ruta ingreso usuarios
+        //Cors
+        this.app.use(cors())
         /* this.app.use('/api/ingresar', rutaIngresar) */
     }
 

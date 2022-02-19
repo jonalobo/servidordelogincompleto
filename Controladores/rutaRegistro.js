@@ -2,12 +2,12 @@ const Registro = require('../Modelos/registroUsuarioBD')
 const bcrypt = require('bcryptjs')
 
 
-function registroGet (req,res){
+/* function registroGet (req,res){
     res.json({
         mensaje: "Hola desde ruta controlador get"
     })
     res.end()
-}
+} */
 
 //Ruta para añadir usuario nuevo
 async function registroPost (req,res){
@@ -34,19 +34,25 @@ async function registroPost (req,res){
     
         const usuarioGuardado = await usuario.save()
     
-        console.log(usuarioGuardado)
+        res.json({
+            mensaje:"El usuario se ha registrado correctamente"
+        })
     
         res.end()
     } catch (error) {
         console.log(error)
     }
 
-    
 }
 
 
 
-function registroPut (req,res){
+/* function registroPut (req,res){
+
+    const { id } = req.body
+
+    console.log(id)
+
     res.json({
         mensaje: "Hola desde ruta controlador put"
     })
@@ -54,27 +60,19 @@ function registroPut (req,res){
 }
 
 
-function registroPatch (req,res){
-    res.json({
-        mensaje: "Hola desde ruta controlador patch"
-    })
-    res.end()
-}
-
 
 function registroDelete (req,res){
     res.json({
         mensaje: "Hola desde ruta controlador delete"
     })
     res.end()
-}
+} */
 
 
 
 module.exports = {
-    registroGet,
+    /* registroGet, */
     registroPost,
-    registroPut,
-    registroPatch,
-    registroDelete
+    /* registroPut,
+    registroDelete */
 }
